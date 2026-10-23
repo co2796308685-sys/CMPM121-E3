@@ -28,3 +28,9 @@ I will choose the design that looks the clearest and most interesting at a small
 - **C - Explored:** I added a pink-to-purple gradient and a Bézier curve to create a smiling face.
 
 All three alternatives were explored on separate branches. I have not chosen or merged any of them yet.
+
+## Final Decision
+
+I chose **C - Color and Curves** as my final design. I like the pink-to-purple gradient and the curved smile because they make the character look friendly and relaxed. Compared to A's small dots and B's star and moon decorations, I think C looks clearer at a small size, which matches my original choosing criterion.
+
+I rebased C onto main and kept the `buildFace()` refactoring. Alternatives A and B are still available on their own branches.
