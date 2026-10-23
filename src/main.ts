@@ -1,3 +1,6 @@
+import starUrl from "./assets/star.svg?no-inline";
+import moonUrl from "./assets/moon.svg?no-inline";
+
 const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 
@@ -5,7 +8,10 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute(
+  "aria-label",
+  "A cute face decorated with a yellow star and a blue moon",
+);
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -16,6 +22,29 @@ head.setAttribute("fill", "#f3cf87");
 head.setAttribute("stroke", "#302c29");
 head.setAttribute("stroke-width", "4");
 face.append(head);
+
+const starImage = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+starImage.setAttribute("href", starUrl);
+starImage.setAttribute("x", "8");
+starImage.setAttribute("y", "37");
+starImage.setAttribute("width", "46");
+starImage.setAttribute("height", "46");
+face.append(starImage);
+
+const moonImage = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+moonImage.setAttribute("href", moonUrl);
+moonImage.setAttribute("x", "146");
+moonImage.setAttribute("y", "37");
+moonImage.setAttribute("width", "46");
+moonImage.setAttribute("height", "46");
+face.append(moonImage);
+
 
 const leftEye = document.createElementNS(
   "http://www.w3.org/2000/svg",
