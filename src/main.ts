@@ -5,7 +5,10 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute(
+  "aria-label",
+  "A magical face surrounded by 120 pink and purple dots",
+);
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -16,6 +19,24 @@ head.setAttribute("fill", "#f3cf87");
 head.setAttribute("stroke", "#302c29");
 head.setAttribute("stroke-width", "4");
 face.append(head);
+
+for (let i = 0; i < 120; i++) {
+  const angle = (i / 120) * Math.PI * 2;
+  const x = 100 + 91 * Math.cos(angle);
+  const y = 100 + 91 * Math.sin(angle);
+
+  const dot = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "circle",
+  );
+
+  dot.setAttribute("cx", String(x));
+  dot.setAttribute("cy", String(y));
+  dot.setAttribute("r", "1.8");
+  dot.setAttribute("fill", i % 2 === 0 ? "#9270bc" : "#e5a5ce");
+
+  face.append(dot);
+}
 
 const leftEye = document.createElementNS(
   "http://www.w3.org/2000/svg",
